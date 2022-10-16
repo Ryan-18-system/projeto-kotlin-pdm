@@ -31,7 +31,7 @@ class FormActivity : AppCompatActivity() {
         this.btFormSalvar = findViewById(R.id.btFormSalvar)
 
         this.btFormSalvar.setOnClickListener(OnAddDuelo())
-
+        this.btFormCancelar.setOnClickListener(OnCancelar())
     }
     inner class OnAddDuelo:View.OnClickListener{
 
@@ -52,6 +52,11 @@ class FormActivity : AppCompatActivity() {
             }catch (e:Exception){
                 Toast.makeText(this@FormActivity,"${e.message}",Toast.LENGTH_LONG).show()
             }
+        }
+    }
+    inner class OnCancelar:View.OnClickListener{
+        override fun onClick(p0: View?) {
+            finish()
         }
     }
 

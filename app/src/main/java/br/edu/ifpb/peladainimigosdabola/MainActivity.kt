@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         this.lvMainDuelos.onItemLongClickListener = OnItemLongClick()
     }
     private fun atualizar(){
-        val layout = android.R.layout.simple_list_item_1
-        this.lvMainDuelos.adapter = ArrayAdapter(this,layout,this.daoDueloDAO.read())
+
+        this.lvMainDuelos.adapter = DueloAdapter(this,this.daoDueloDAO.read())
     }
     inner class OnClickAdd: View.OnClickListener{
         override fun onClick(p0: View?) {

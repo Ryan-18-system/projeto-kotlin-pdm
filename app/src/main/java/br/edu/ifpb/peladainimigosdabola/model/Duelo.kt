@@ -32,7 +32,14 @@ class Duelo: Serializable {
     }
 
     override fun toString(): String {
-        return "$selecao - $local - $resultado"
+        if(this.resultado == -1){
+            return "$selecao - $local - Derrota"
+        }else if(this.resultado ==1){
+            return "$selecao - $local - Vitória"
+        }else{
+            return "$selecao - $local - Empate"
+        }
+
     }
 
 }

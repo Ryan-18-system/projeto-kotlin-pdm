@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="verde_brasil">#3F795E</color>
+    <color name="red_defeat">#FA6366</color>
+    <color name="green_victory">#d2f0b7</color>
+    <color name="grey_empate">#D3D3D3</color>
 </resources>
