@@ -46,9 +46,15 @@ class FormActivity : AppCompatActivity() {
                 }else{
                     -1
                 }
-                val newDuelo = Duelo(selecao,local,resultado)
-                this@FormActivity.daoDuelo.insert(newDuelo)
-                finish()
+                if(selecao.isEmpty() || local.isEmpty()){
+                    Toast.makeText(this@FormActivity,"Campos vazios, por favor preencha todos os campos", Toast.LENGTH_SHORT).show()
+
+                }else{
+                    val newDuelo = Duelo(selecao,local,resultado)
+                    this@FormActivity.daoDuelo.insert(newDuelo)
+                    finish()
+                }
+
             }catch (e:Exception){
                 Toast.makeText(this@FormActivity,"${e.message}",Toast.LENGTH_LONG).show()
             }
