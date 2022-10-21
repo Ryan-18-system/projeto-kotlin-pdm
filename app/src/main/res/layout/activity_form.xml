@@ -48,6 +48,7 @@
             android:hint="Local"
             android:inputType="text" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

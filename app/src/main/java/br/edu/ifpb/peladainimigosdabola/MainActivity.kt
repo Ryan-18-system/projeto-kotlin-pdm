@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         this.btAdd = findViewById(R.id.fabMainAdd)
         this.btAdd.setOnClickListener(OnClickAdd())
 
-        this.lvMainDuelos.onItemLongClickListener = OnItemLongClick()
+        this.lvMainDuelos.setOnItemLongClickListener(OnItemLongClick())
     }
     private fun atualizar(){
 

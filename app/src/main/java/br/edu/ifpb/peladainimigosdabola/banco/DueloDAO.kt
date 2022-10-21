@@ -30,7 +30,7 @@ class DueloDAO {
             val selecao = c.getString(1)
             val local = c.getString(2)
             val resultado = c.getInt(3)
-            val data = c.getInt(4)
+            val data = c.getLong(4)
             val duelo = Duelo(id, selecao, local,resultado,data)
             lista.add(duelo)
             c.moveToNext()
