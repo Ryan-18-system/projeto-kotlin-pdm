@@ -39,6 +39,20 @@ class DueloDAO {
     }
 
     fun find(id: Int): Duelo?{
+        val colunas = arrayOf("id","selecao","local","resultado","data")
+        val where = "id = ?"
+        val parametroWhere = arrayOf(id.toString())
+        val c = this.banco.readableDatabase.query("duelo",colunas,where,parametroWhere,null,null,null)
+        c.moveToFirst()
+        if(c.count == 1){
+            val id = c.getInt(0)
+            val selecao = c.getString(1)
+            val local = c.getString(2)
+            val resultado = c.getInt(3)
+            val data = c.getLong(4)
+            val duelo = Duelo(id, selecao, local,resultado,data)
+            return duelo
+        }
         return null
     }
 
@@ -46,9 +60,7 @@ class DueloDAO {
         val where = arrayOf(id.toString())
         this.banco.writableDatabase.delete("duelo", "id = ?", where)
     }
-    fun delete(duelo: Duelo){
-        this.delete(duelo)
-    }
+
 
 
     fun update(pessoa: Duelo){

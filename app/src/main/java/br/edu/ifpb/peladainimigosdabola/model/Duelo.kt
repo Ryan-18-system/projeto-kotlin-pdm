@@ -16,7 +16,7 @@ class Duelo: Serializable {
         this.local = local
         this.resultado = resultado
         this.data = Calendar.getInstance().timeInMillis
-        Log.i("DATA",Calendar.getInstance().timeInMillis.toString())
+
     }
 
     constructor(id:Int,selecao:String, local:String, resultado: Int, data: Long){

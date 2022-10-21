@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         this.btAdd.setOnClickListener(OnClickAdd())
 
         this.lvMainDuelos.setOnItemLongClickListener(OnItemLongClick())
+        this.lvMainDuelos.setOnItemClickListener(OnItemClick())
     }
     private fun atualizar(){
 
@@ -34,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         override fun onClick(p0: View?) {
             val intent = Intent(this@MainActivity,FormActivity::class.java)
             if (intent.resolveActivity(packageManager) != null) startActivity(intent)
+        }
+    }
+    inner class OnItemClick: AdapterView.OnItemClickListener{
+        override fun onItemClick(adapter: AdapterView<*>?, view: View?, index: Int, id: Long) {
+            val duelo = adapter?.getItemAtPosition(index) as Duelo
+            this@MainActivity.daoDueloDAO.find(duelo.id)
+            val msg = "$duelo"
+            Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
         }
     }
     inner class OnItemLongClick: AdapterView.OnItemLongClickListener{
